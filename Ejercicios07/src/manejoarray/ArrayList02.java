@@ -16,13 +16,13 @@ import java.util.Scanner;
 public class ArrayList02 {
 
     public static void main(String[] args) {
-     
+
         ArrayList<String> arreglo2 = obtenerDatos();
         String cadenaFinal = obtenerCadenaFinal(arreglo2);
         System.out.printf("%s\n", cadenaFinal);
     }
 
-    public static ArrayList<String> obtenerDatos(){
+    public static ArrayList<String> obtenerDatos() {
         ArrayList<String> arreglo2 = new ArrayList<>();
         boolean bandera = true;
         String pais;
@@ -31,6 +31,7 @@ public class ArrayList02 {
         while (bandera) {
             System.out.println("Ingrese un nombre de un país");
             pais = entrada.nextLine();
+            pais = convertirMayusculas(pais);
             arreglo2.add(pais);
             System.out.println("Desea ingresar salir, ingrese (s)");
             opcion = entrada.nextLine();
@@ -39,22 +40,27 @@ public class ArrayList02 {
             }
         }
         return arreglo2;
-        
+
     }
-        
-    public static String obtenerCadenaFinal(ArrayList<String> lista){
+
+    public static String convertirMayusculas(String c) {
+        String miValor = c.toUpperCase();
+        return miValor;
+    }
+
+    public static String obtenerCadenaFinal(ArrayList<String> lista) {
         String cadenaFinal = "";
-        
+
         for (int i = 0; i < lista.size(); i++) {
             cadenaFinal = String.format("%s%s\n", cadenaFinal,
                     lista.get(i));
         }
         return cadenaFinal;
-    }    
-        /*
+    }
+    /*
         ArrayList <String> arreglo2 = new ArrayList<>();
         
         ArrayList <Boolean> arreglo4 = new ArrayList<>();
-         */
-    
+     */
+
 }
